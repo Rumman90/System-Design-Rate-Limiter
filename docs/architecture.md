@@ -1,4 +1,3 @@
-```md
 # Architecture – Simple Rate Limiter
 
 The rate limiter works as a middleware inside the API layer.
@@ -42,3 +41,4 @@ sequenceDiagram
     else Count > Limit
         API-->>User: 429 Too Many Requests
     end
+```

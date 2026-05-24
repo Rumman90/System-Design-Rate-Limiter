@@ -1,4 +1,3 @@
-```md
 # Rate Limiting Algorithm
 
 This design uses a Fixed Window Counter.
@@ -11,11 +10,15 @@ Allow 100 requests per 60 seconds per IP address
 
 ## Redis Key Format
 
+```text
 rl:ip:{ip}:{windowStart}
+```
 
 Example
 
+```text
 rl:ip:203.0.113.10:1710000000
+```
 
 Where windowStart represents the start time of the current 60-second window.
 
@@ -29,11 +32,14 @@ Where windowStart represents the start time of the current 60-second window.
 
 ## Redis Commands
 
+```text
 INCR key  
 EXPIRE key 60
+```
 
 Logic
 
+```text
 count = INCR key
 
 if count == 1
@@ -43,6 +49,7 @@ if count > 100
     return 429
 else
     allow request
+```
 
 ## Limitation
 
