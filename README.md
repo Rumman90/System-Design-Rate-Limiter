@@ -129,3 +129,7 @@ Additional notes:
 This repository documents a rate limiter system design in a concise, reviewable
 format. It focuses on architecture, algorithm choice, tradeoffs, and scalability
 considerations.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
